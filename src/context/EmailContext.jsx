@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useRef, useState } from "react";
 import { emailData } from "../Utils/Utils";
 
 export const EmailContext = createContext();
@@ -7,6 +7,20 @@ export const EmailContextProvider = ({ children }) => {
   const [search, setSearch] = useState("");
   const [selectedCheckboxes, setSelectedCheckboxes] = useState("");
   const [dropdownValue, setDropDownValue] = useState("");
+
+  const cardContainerRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (cardContainerRef.current) {
+      cardContainerRef.current.scrollLeft -= 210;
+    }
+  };
+
+  const scrollRight = () => {
+    if (cardContainerRef.current) {
+      cardContainerRef.current.scrollLeft += 210;
+    }
+  };
 
   const handleDropDownValue = (e) => {
     setDropDownValue(e.target.value);
@@ -69,6 +83,9 @@ export const EmailContextProvider = ({ children }) => {
     handleSeachInput,
     handleCheckBoxValue,
     handleDropDownValue,
+    cardContainerRef,
+    scrollLeft,
+    scrollRight,
   };
 
   return (

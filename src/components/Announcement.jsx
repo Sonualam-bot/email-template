@@ -1,26 +1,15 @@
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import "../Css/Card.css";
 import { EmailContext } from "../context/EmailContext";
 import { Card } from "../card/Card";
 
 import Error from "../assets/Error.png";
 
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+
 export const Announcement = () => {
-  const { announcement } = useContext(EmailContext);
-
-  const cardContainerRef = useRef(null);
-
-  const scrollLeft = () => {
-    if (cardContainerRef.current) {
-      cardContainerRef.current.scrollLeft -= 210;
-    }
-  };
-
-  const scrollRight = () => {
-    if (cardContainerRef.current) {
-      cardContainerRef.current.scrollLeft += 210;
-    }
-  };
+  const { announcement, cardContainerRef, scrollLeft, scrollRight } =
+    useContext(EmailContext);
 
   return (
     <>
@@ -40,10 +29,10 @@ export const Announcement = () => {
 
           <button className="arrow left-arrow" onClick={scrollLeft}>
             {" "}
-            Left
+            <AiOutlineArrowLeft />
           </button>
           <button className="arrow right-arrow" onClick={scrollRight}>
-            Right
+            <AiOutlineArrowRight />
           </button>
         </div>
       </div>

@@ -264,6 +264,7 @@
       border: none;
       outline: none;
       font-size: 1.4rem;
+      background: none;
     }
     .right-arrow{
       display: block;
@@ -274,6 +275,7 @@
       border: none;
       outline: none;
       font-size: 1.4rem;
+      background: none;
     }
 
     .card{
