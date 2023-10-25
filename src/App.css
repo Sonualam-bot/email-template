@@ -32,7 +32,7 @@ body::-webkit-scrollbar{
 @media screen and (max-width: 400px ){
   .page-content{
     width: 400px;
-    height: 2566px;
+    /* height: 2566px; */
     background: #FFF;
   }
 }
