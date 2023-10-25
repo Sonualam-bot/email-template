@@ -1,6 +1,6 @@
 import "../Css/Card.css";
 
-import premiumIcon from "../assets/annonce-asset/premiumFrame.svg";
+import premiumIcon from "../assets/annonce-asset/Premium.png";
 
 export const Card = ({ data }) => {
   const { id, title, image, premium } = data;
