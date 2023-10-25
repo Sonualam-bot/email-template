@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  /* width: 1440px; */
+  height: 2484px;
+  top: -1720px;
+  left: -771px;
+  color: #FFFFFF;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+
+
+.page-content {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* media queries */
+
+@media screen and (max-width: 400px ){
+  .page-content{
+    width: 400px;
+    height: 2566px;
+    background: #FFF;
+  }
+}

@@ -1,0 +1,304 @@
+.parent-card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.parent-card-container > h2{
+    align-self: stretch;
+    color: var(--neutrals-grey-100, #161616);
+    font-family: Helvetica Neue;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; 
+    letter-spacing: -0.4px;
+}
+
+.left-arrow, .right-arrow{
+  display: none;
+}
+
+
+.fallbackmessage{
+    display: flex;
+    color: #161616;
+}
+.fallbackmessage > img{
+    width: 30px;
+    height: 30px;
+}
+
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;  /* so that extra cards go to the next row */
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    justify-content: flex-start; /* to align the cards to the left*/
+    max-width: 100%; /* to Ensure it doesn't overflow parent container */
+
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    background:  #FFF;
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 calc(33.33% - 16px); /* Each card takes up 33.33% width with 16px gap */
+    margin-bottom: 16px; /* Add some margin to separate rows */
+}
+
+.thumbnail-frame{
+    display: flex;
+    height: 228px;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    position: relative;
+    transition: transform 0.3s, filter 0.3s ;
+}
+
+.card:hover .thumbnail-frame {
+    transform: scale(1.05); /* Scale up the image on hover */
+    /* filter: grayscale(10%);  */
+  }
+
+.thumbnail{
+    height: 228px;
+    flex: 1 0 0;
+    position: relative;
+}
+
+
+.banner{
+    width: 287.333px;
+    height: 228px;
+    flex-shrink: 0;
+    background:  #F4F4F4;
+}
+
+.banner > img{
+    width: 287.333px;
+    height: 255px;
+    flex-shrink: 0;
+    background:  #d3d3d3 50% / cover no-repeat;
+    object-fit: cover;
+}
+
+.banner2{
+    width: 287.333px;
+    height: 228px;
+    flex-shrink: 0;
+    background:  #FFF;
+}
+
+.bgcolor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(220, 219, 219, 0.1);
+    display: none;
+    transition: opacity 0.3s;
+  }
+  
+
+  .card:hover .bgcolor {
+    display: block;
+  }
+
+.title-frame{
+    display: flex;
+    padding: 16px;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1 0 0;
+    align-self: stretch;
+    z-index: 100;
+}
+
+.title-frame > p{
+    color:  #161616;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; 
+    letter-spacing: -0.18px;
+}
+
+.card-button{
+    display: flex;
+    padding: 10px 16px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 92.833px;
+    bottom: -40px;
+    border-radius: 24px;
+    background: var(--neutrals-grey-100, #161616);
+    animation: slideUp 0.4s ease-in-out forwards;
+    opacity: 0;
+    cursor: pointer;
+    
+}
+
+.card-button-special{
+    display: flex;
+    padding: 0px 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+}
+.card-button-special > button {
+    color: var(--neutrals-white, #FFF);
+    font-family: Helvetica Neue;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; 
+    background-color: #161616;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+
+
+.card:hover .card-button {
+    animation: slideUp 0.4s ease-in-out forwards;   /* to trigger slide-up animation on hover */
+    
+}
+  
+  .card:not(:hover) .card-button {
+    animation: slideDown 0.4s ease-in-out forwards;   /* to trigger slide-down animation when moving the mouse elsewhere */
+     
+  }
+
+
+  .premium{
+    display: flex;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    right: 8.333px;
+    top: 8px;
+    border-radius: 6px;
+    background: rgba(38, 38, 38, 0.60);
+    z-index: 1;
+  }
+
+  .premium > img{
+    width: 24px;
+    height: 24px;
+  }
+
+
+  @keyframes slideUp {
+    0% {
+      opacity: 0.9;
+      bottom: -5px; /* Starting position hidden */
+    }
+    100% {
+        opacity: 1;
+      bottom: 40%; /* Slide up to this position visible */
+    }
+  }
+  
+  @keyframes slideDown {
+    0% {
+      opacity: 1;
+      bottom: 40%; /* Starting from this position visible */
+    }
+    99%{
+        opacity: 0.5;
+        bottom: -3px;
+    }
+    100% {
+   
+      opacity: 0;
+      bottom: -8px; /* Sliding down to this position hidden */
+    }
+  }
+
+
+  @media screen and (max-width: 400px){
+
+    .parent-card-container{
+      display: inline-flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+    }
+    .parent-card-container > h2{
+      padding: 0 24px;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: nowrap; 
+      overflow-x: auto; 
+      width: 390px;
+  
+    }
+
+    .left-arrow{
+      display: block;
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 2%;
+      border: none;
+      outline: none;
+      background-color: red;
+      font-size: 1.4rem;
+    }
+    .right-arrow{
+      display: block;
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      right: 2%;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+    }
+
+    .card{
+      width: 253px;
+      flex: 0 0 calc(60% - 16px); 
+    }
+
+    .banner{
+      width: 253px;
+      height: 228px;
+      flex-shrink: 0;
+      background:  #F4F4F4;
+  }
+  .banner > img{
+    width: 253px;
+    height: 255px;
+    flex-shrink: 0;
+    background:  #d3d3d3 50% / cover no-repeat;
+    object-fit: cover;
+  }
+  .banner2{
+    width: 253px;
+    height: 228px;
+    flex-shrink: 0;
+    background:  #FFF;
+  }
+}

@@ -1,0 +1,22 @@
+.loading-card {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .loading-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .loading-card .skeleton-element {
+    margin-bottom: 10px;
+  }
+  
