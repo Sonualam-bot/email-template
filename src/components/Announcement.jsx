@@ -40,10 +40,10 @@ export const Announcement = () => {
 
           <button className="arrow left-arrow" onClick={scrollLeft}>
             {" "}
-            T{" "}
+            Left
           </button>
           <button className="arrow right-arrow" onClick={scrollRight}>
-            T
+            Right
           </button>
         </div>
       </div>
