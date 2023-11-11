@@ -24,7 +24,6 @@ const CardCarousel = ({ cards }) => {
           key={index}
           className={`card ${index === currentIndex ? "active" : ""}`}
         >
-          {/* Render your card component here */}
           <Card data={card} key={card.id} />
         </div>
       ))}
